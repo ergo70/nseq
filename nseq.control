@@ -1,0 +1,5 @@
+# nseq extension
+comment = 'data type for nucleotide sequences'
+default_version = '1.0'
+module_pathname = '$libdir/nseq'
+relocatable = true
