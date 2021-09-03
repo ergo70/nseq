@@ -1,7 +1,7 @@
 /************************************************************************
  * nseq - a storage efficient nucleotide sequence datatype for PostgreSQL
  *
- * Copyright (c) 2014,2015 by Ernst-G. Schmid
+ * Copyright (c) 2014,2021 by Ernst-G. Schmid
  *
  ************************************************************************/
 
