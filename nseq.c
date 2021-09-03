@@ -48,7 +48,7 @@ nseq_size (PG_FUNCTION_ARGS)
 {
     NSEQ *nseq = PG_GETARG_NSEQ_P (0);
 
-    PG_RETURN_INT32 (nseq->compressed_size);
+    PG_RETURN_INT32 (nseq->compressed_size + (((nseq->compressed_size % BLOCKSIZE) != 0) ? 1 : 0));
 }
 
 Datum nseq_transscribe (PG_FUNCTION_ARGS);
