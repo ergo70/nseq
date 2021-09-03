@@ -134,15 +134,10 @@ static NSEQ *make_nseq(const char* sequence, const size_t seqlen, const bool isR
     char *buffer = NULL;
     char tmp;
     uint32 i, offset = 0;
-    uint32 bufsize = seqlen / BLOCKSIZE;
+    uint32 bufsize = (seqlen / BLOCKSIZE) + (((seqlen % BLOCKSIZE) != 0) ? 1 : 0);
     //COMPRESSED_DATA *compressed_data;
     int32 histogram[HISTSZ] = {0,0,0,0};
     bool run = true;
-
-    if((seqlen % BLOCKSIZE) != 0)
-    {
-        bufsize += 1;
-    }
 
     buffer = (char*) palloc0(bufsize*sizeof(char));
 
