@@ -1,4 +1,4 @@
-﻿DROP TYPE IF EXISTS dna CASCADE;
+DROP TYPE IF EXISTS dna CASCADE;
 DROP TYPE IF EXISTS rna CASCADE;
 
 CREATE TYPE dna;
@@ -59,12 +59,12 @@ CREATE TYPE dna (
    CREATE OR REPLACE FUNCTION nseq_equals(dna,dna)
 RETURNS bool
 AS 'nseq'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
    CREATE OR REPLACE FUNCTION nseq_equals(rna,rna)
 RETURNS bool
 AS 'nseq'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OPERATOR = (
 		 LEFTARG = dna,
@@ -87,12 +87,12 @@ CREATE OPERATOR = (
    CREATE OR REPLACE FUNCTION nseq_concat(dna,dna)
 RETURNS dna
 AS 'nseq'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
    CREATE OR REPLACE FUNCTION nseq_concat(rna,rna)
 RETURNS rna
 AS 'nseq'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OPERATOR || (
 		 LEFTARG = dna,
