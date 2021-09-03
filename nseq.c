@@ -1,7 +1,7 @@
 /************************************************************************
  * nseq - a storage efficient nucleotide sequence datatype for PostgreSQL
  *
- * Copyright (c) 2014,2021 by Ernst-G. Schmid
+ * Copyright (c) 2014,2015 by Ernst-G. Schmid
  *
  ************************************************************************/
 
@@ -48,7 +48,7 @@ nseq_size (PG_FUNCTION_ARGS)
 {
     NSEQ *nseq = PG_GETARG_NSEQ_P (0);
 
-    PG_RETURN_INT32 (nseq->compressed_size + (((nseq->compressed_size % BLOCKSIZE) != 0) ? 1 : 0));
+    PG_RETURN_INT32 (nseq->compressed_size);
 }
 
 Datum nseq_transscribe (PG_FUNCTION_ARGS);
